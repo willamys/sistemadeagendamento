@@ -6,6 +6,7 @@ import SessionController from './app/controllers/SessionController';
 import Database from './database';
 import authMiddleware from './app/middlewares/auth';
 import FileController from './app/controllers/FileController';
+import AppointmentController from './app/controllers/AppointmentController';
 import CollaboratorController from './app/controllers/CollaboratorController';
 
 const routes = new Router();
@@ -20,6 +21,7 @@ routes.post('/sessions', SessionController.store);
 routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 routes.get('/collaborator', CollaboratorController.index);
+routes.post('/appointments', AppointmentController.store);
 
 //uploads
 
