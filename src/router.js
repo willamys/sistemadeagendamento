@@ -8,6 +8,7 @@ import authMiddleware from './app/middlewares/auth';
 import FileController from './app/controllers/FileController';
 import AppointmentController from './app/controllers/AppointmentController';
 import CollaboratorController from './app/controllers/CollaboratorController';
+import ScheduleController from './app/controllers/ScheduleController';
 
 const routes = new Router();
 
@@ -23,6 +24,8 @@ routes.put('/users', UserController.update);
 routes.get('/collaborator', CollaboratorController.index);
 routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
+
+routes.get('/schedule', ScheduleController.index);
 
 
 //uploads
