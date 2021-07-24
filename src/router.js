@@ -21,7 +21,9 @@ routes.post('/sessions', SessionController.store);
 routes.use(authMiddleware);
 routes.put('/users', UserController.update);
 routes.get('/collaborator', CollaboratorController.index);
+routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
+
 
 //uploads
 
