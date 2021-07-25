@@ -4,6 +4,7 @@ import File from '../app/models/File';
 import Appointment from '../app/models/Appointment';
 import databaseConfig from '../config/database';
 import mongoose from 'mongoose';
+import authConfig from '../config/authMongo';
 
 
 const models = [User, File, Appointment];
@@ -23,7 +24,7 @@ class Database {
   }
   mongo() {
     this.mongoConnection = mongoose.connect(
-      'mongodb+srv://sistemadeagendamento:sistemadeagendamento@cluster0.n1s6q.mongodb.net/sistema?retryWrites=true&w=majority',
+      authConfig.uri,
       { useNewUrlParser: true, useUnifiedTopology: true },
     );
   }
